@@ -63,14 +63,15 @@ order by gross_revenue desc
 limit 5;
 
 -- 7. Is "Academy Dinosaur" available for rent from Store 1?
-select c.store_id, title from
-sakila.film as a
+select c.store_id, title, count(inventory_id) as n_copies 
+from sakila.film as a
 inner join sakila.inventory as b
 on a.film_id = b.film_id
 inner join sakila.store as c
 on b.store_id = c.store_id
 where title = "ACADEMY DINOSAUR" 
-group by store_id
-limit 1
+and c.store_id = 1
+order by store_id
+
 
 

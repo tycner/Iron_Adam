@@ -1,4 +1,3 @@
-SELECT * FROM sakila.film_actor;
 -- 1. Which actor has appeared in the most films?
 select first_name, last_name, count(film_id) as n_films
 from sakila.actor as a 
