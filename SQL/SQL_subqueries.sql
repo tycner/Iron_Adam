@@ -1,14 +1,11 @@
 -- 1. How many copies of the film Hunchback Impossible exist in the inventory system?
-select count(inventory_id) as n_copies from sakila.inventory 
-where film_id in 
-(select film_id from sakila.film 
-where title = "HUNCHBACK IMPOSSIBLE");
+select count(inventory_id) as n_copies from sakila.inventory where film_id in 
+(select film_id from sakila.film where title = "HUNCHBACK IMPOSSIBLE");
 
 -- 2. List all films whose length is longer than the average of all the films.
-select title, length from sakila.film where 
-length in (select length from sakila.film where 
-length > (select avg(length) 
-as avg_length from sakila.film));
+select title, length from sakila.film where length in 
+(select length from sakila.film where length > 
+(select avg(length) from sakila.film));
 
 -- 3. Use subqueries to display all actors who appear in the film Alone Trip.
 select first_name, last_name from sakila.actor where actor_id in
@@ -18,8 +15,7 @@ select first_name, last_name from sakila.actor where actor_id in
 -- 4. Identify all movies categorized as family films.
 select title from sakila.film where film_id in 
 (select film_id from sakila.film_category where category_id in
-(select category_id from sakila.category where name in
-(select name from sakila.category where name = "Family")));
+(select category_id from sakila.category where name = "Family"));
 
 -- 5. Get name and email from customers from Canada using subqueries.
 select first_name, last_name, email from sakila.customer where address_id in 
