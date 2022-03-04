@@ -1,0 +1,47 @@
+It is assumed that the mean systolic blood pressure is μ = 120 mm Hg. In the Honolulu Heart Study, a sample of 
+n = 100 people had an average systolic blood pressure of 130.1 mm Hg with a standard deviation of 21.21 mm Hg.
+Is the group significantly different from the regular population?
+
+population mean:	μ = 120 
+sample:			n = 100
+sample mean: 		x̄ = 130.1  
+sample st.dev.: 	σx̅ = 21.21 
+
+Null hypothesis H0: 		Group is not significantly different from the regular population
+Alternative hypothesis Ha:	Group is significantly different from the regular population
+
+n is greater than 30 but the standard deviation for the population is unknown: t-test
+
+1. Setting confidence level:	
+
+	cf = 95%
+
+2. Calculating test statistic for t-distribution: t = (x̄ - μ)/(σx̅/√n) 
+
+	t = (130.1 - 120)/(21.21/√100)
+	t = 10.1/0.2121
+	t = 4.76
+
+3. Calculating degree of freedom: df = n - 1
+
+	df = 100 - 1
+	df = 99
+
+4. Checking critical value in the t-table (for 0,025 and df = 99): 
+
+	tc = 1.984
+
+5. Checking if t is in the allowed region
+	
+	t = 4.76
+	tc = 1.984
+	t > tc		
+
+t is in the rejection zone; H0 is rejected, the group is signifficantly different from the population
+
+
+	
+
+
+ 
+
